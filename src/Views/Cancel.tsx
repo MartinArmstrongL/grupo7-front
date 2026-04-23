@@ -12,9 +12,9 @@ export default function CancelPage() {
 
                 <button
                     style={styles.button}
-                    onClick={() => navigate("/")}
+                    onClick={() => navigate("/products")}
                 >
-                    Ir a Iniciar Sesión
+                    Ir a Productos
                 </button>
             </Card>
         </div>

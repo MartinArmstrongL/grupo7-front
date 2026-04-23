@@ -56,6 +56,9 @@ export default function CartPage() {
                     ))}
 
                     <div style={styles.actions}>
+                        <h3 style={styles.total}>
+                            Total a pagar: ${totalAmount}
+                        </h3>
                         <button
                             onClick={() => navigate("/products")}
                             style={styles.returnButton}
@@ -118,5 +121,12 @@ const styles = {
         border: "none",
         borderRadius: "6px",
         cursor: "pointer",
+    },
+    total: {
+        width: "100%",
+        textAlign: "center" as const,
+        marginBottom: "10px",
+        fontSize: "18px",
+        fontWeight: "bold" as const,
     },
 };

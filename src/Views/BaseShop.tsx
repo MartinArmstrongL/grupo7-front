@@ -23,19 +23,13 @@ export default function BaseShop() {
         const response2 = await fetch(
           `${import.meta.env.VITE_API_URL}/products`,
           {
-            headers: {
-              "Content-Type": "application/json",
-              ...(token && { Authorization: `Bearer ${token}` }),
-            },
+
           }
         );
         const response = await fetch(
           `${import.meta.env.VITE_API_URL}/stores/checkout/inventory`,
           {
-            headers: {
-              "Content-Type": "application/json",
-              ...(token && { Authorization: `Bearer ${token}` }),
-            },
+
           }
         );
 
@@ -49,17 +43,19 @@ export default function BaseShop() {
           productsBase.map((p: ProductFromAPI) => [p.sku, p])
         );
 
-        const finalProducts = inventory.map((item: any) => {
-          const product = productMap.get(item.sku);
+        const finalProducts = inventory
+          .map((item: any) => {
+            const product = productMap.get(item.sku);
 
-          return {
-            sku: item.sku,
-            quantity: item.quantity,
-            name: product?.name,
-            price: product?.price
-          };
-        });
-
+            return {
+              sku: item.sku,
+              quantity: item.quantity,
+              name: product?.name,
+              price: product?.price
+            };
+          })
+          .filter(product => product.name !== undefined);
+        console.log("Fetched products:", finalProducts);
         setProducts(finalProducts);
       } catch (err) {
         console.error(err);

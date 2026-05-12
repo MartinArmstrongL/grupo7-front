@@ -20,7 +20,6 @@ export default function PayButton({ amount }: PayButtonProps) {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        ...(token && { Authorization: `Bearer ${token}` }),
                     },
                     body: JSON.stringify({ amount }),
                 }

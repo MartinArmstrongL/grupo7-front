@@ -13,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<ProductList />} />
         <Route path="/products" element={<ProductList />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/success" element={<SuccessPage />} />

@@ -19,7 +19,7 @@ export default function BaseShop() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const token = authStorage.getToken();
+        //const token = authStorage.getToken();
         const response2 = await fetch(
           `${import.meta.env.VITE_API_URL}/products`,
           {
@@ -54,7 +54,7 @@ export default function BaseShop() {
               price: product?.price
             };
           })
-          .filter(product => product.name !== undefined);
+          .filter((product: Product) => product.name !== undefined);
         console.log("Fetched products:", finalProducts);
         setProducts(finalProducts);
       } catch (err) {

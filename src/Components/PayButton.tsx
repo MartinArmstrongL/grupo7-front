@@ -11,7 +11,7 @@ export default function PayButton({ amount }: PayButtonProps) {
         try {
             setLoading(true);
 
-            const token = authStorage.getToken();
+            //const token = authStorage.getToken();
 
 
             const response = await fetch(

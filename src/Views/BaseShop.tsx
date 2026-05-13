@@ -2,7 +2,7 @@ import ProductCard from "../Components/ProductCard";
 import { useCart } from "../Contex/CartContex";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { authStorage } from "../Contex/AuthStorage";
+//import { authStorage } from "../Contex/AuthStorage";
 import type { Product } from "../Structs/Product";
 import type { ProductFromAPI } from "../Structs/ProductFromProducts";
 export default function BaseShop() {

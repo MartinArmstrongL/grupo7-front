@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { authStorage } from "../Contex/AuthStorage";
+//import { authStorage } from "../Contex/AuthStorage";
 type PayButtonProps = {
     amount: number;
 };
